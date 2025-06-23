@@ -9,7 +9,7 @@ import { Toaster } from "@/components/ui/sonner";
 
 // const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
-  title: "Aspire Coach AI",
+  title: "Sensai",
   description: "",
 };
 
