@@ -58,6 +58,7 @@ const HeroSection = () => {
               alt="Banner Sensai"
               className="rounded-lg shadow-2xl border mx-auto"
               priority
+              
             />
           </div>
         </div>
