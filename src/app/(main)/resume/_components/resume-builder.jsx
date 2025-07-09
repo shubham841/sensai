@@ -13,6 +13,8 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import MDEditor from "@uiw/react-md-editor";
+
+
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
@@ -23,6 +25,7 @@ import { resumeSchema } from "@/app/lib/schema";
 import { saveResume } from "../../../../../actions/resume";
 import { entriesToMarkdown } from "@/app/lib/helper";
 import { EntryForm } from "./entry-form";
+import dynamic from "next/dynamic";
 
 export default function ResumeBuilder({ initialContent }) {
   const [activeTab, setActiveTab] = useState("edit");

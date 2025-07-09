@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
       }}
     >
       <html lang="en" suppressHydrationWarning>
-        <body >
+        <body data-new-gr-c-s-check-loaded="14.1209.0" data-gr-ext-installed="">
           <ThemeProvider
             attribute="class"
             defaultTheme="dark"
