@@ -1,36 +1,129 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sensai
+
+An AI-powered career assistant platform built with Next.js that helps users create professional documents, prepare for interviews, and advance their careers.
+
+## Features
+
+- **AI Cover Letter Generator** - Create personalized cover letters with AI assistance
+- **Resume Builder** - Develop and manage professional resumes
+- **Interview Preparation** - Practice with mock interviews and interview tips
+- **User Dashboard** - Centralized hub to manage all your career documents
+- **Authentication** - Secure sign-in and sign-up with Clerk
+- **Onboarding** - Guided setup process for new users
+
+## Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org) - React framework with App Router
+- **Database**: [Prisma](https://www.prisma.io) - ORM for database management
+- **Styling**: [Tailwind CSS](https://tailwindcss.com) - Utility-first CSS framework
+- **UI Components**: Custom component library with shadcn/ui patterns
+- **Authentication**: Clerk
+- **Code Quality**: ESLint
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ 
+- npm or yarn package manager
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd sensai
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Set up environment variables:
+```bash
+cp .env.example .env.local
+```
+
+4. Set up the database:
+```bash
+npx prisma migrate dev
+```
+
+### Running the Development Server
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+The application will automatically reload when you make changes to the code.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+```
+sensai/
+├── src/
+│   ├── app/                 # Next.js app directory
+│   │   ├── (auth)/         # Authentication pages (sign-in, sign-up)
+│   │   ├── (main)/         # Main app pages
+│   │   │   ├── ai-cover-letter/   # Cover letter generator
+│   │   │   ├── dashboard/         # User dashboard
+│   │   │   ├── interview/         # Interview preparation
+│   │   │   ├── resume/            # Resume builder
+│   │   │   └── onboarding/        # Onboarding flow
+│   │   └── layout.js        # Root layout
+│   ├── components/          # Reusable React components
+│   │   └── ui/             # UI component library
+│   ├── hooks/              # Custom React hooks
+│   ├── lib/                # Utility functions and helpers
+│   └── data/               # Static data (FAQs, testimonials, etc.)
+├── actions/                # Server actions
+├── prisma/                 # Database schema and migrations
+└── public/                 # Static assets
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Available Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Database Setup
 
-## Deploy on Vercel
+The project uses Prisma for database management. Key commands:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+# Run pending migrations
+npx prisma migrate dev
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# View database with Prisma Studio
+npx prisma studio
+
+# Generate Prisma client
+npx prisma generate
+```
+
+## Environment Variables
+
+Required environment variables (see `.env.example`):
+
+- `DATABASE_URL` - Database connection string
+- `CLERK_PUBLISHABLE_KEY` - Clerk public key
+- `CLERK_SECRET_KEY` - Clerk secret key
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Support
+
+For support, please open an issue in the repository.
